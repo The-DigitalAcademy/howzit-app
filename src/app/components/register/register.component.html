@@ -1,0 +1,32 @@
+<div class="container">
+  <form class="register" [formGroup]="registerForm">
+    <h3>HOWZIT</h3>
+
+    <label for="name">
+      Name
+      <input type="text" id="name" formControlName="name" />
+    </label>
+
+    <label for="email">
+      Email
+      <input type="email" id="email" formControlName="email" />
+    </label>
+
+    <label for="password">
+      Password
+      <input type="password" id="password" formControlName="password" />
+    </label>
+    <label for="confirm-password"
+      >Confirm Password
+      <input
+        type="password"
+        name="confirm-password"
+        id="confirm-password"
+        formControlName="confirm-password"
+      />
+    </label>
+
+    <button type="submit">Register</button>
+    <p>Already registered? <a routerLink="/login">Login here</a></p>
+  </form>
+</div>
