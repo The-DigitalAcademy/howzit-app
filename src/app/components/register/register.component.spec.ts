@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegiserComponent } from './regiser.component';
+import { RegisterComponent } from './register.component';
 
-describe('RegiserComponent', () => {
-  let component: RegiserComponent;
-  let fixture: ComponentFixture<RegiserComponent>;
+describe('RegisterComponent', () => {
+  let component: RegisterComponent;
+  let fixture: ComponentFixture<RegisterComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RegiserComponent]
+      declarations: [RegisterComponent]
     });
-    fixture = TestBed.createComponent(RegiserComponent);
+    fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
