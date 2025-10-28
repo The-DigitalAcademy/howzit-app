@@ -29,3 +29,26 @@
   display: flex;
   gap: 30px;
 }
+
+.picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* Animation settings */
+  animation: zoomInOut 4s ease-in-out infinite;
+}
+
+/* Keyframes for zoom in and out effect */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
