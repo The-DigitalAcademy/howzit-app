@@ -1,22 +1,26 @@
-import { Component } from '@angular/core';
-import { UserService } from '../../services/user.service';
-import { User } from '../../models/user.model';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  users: User[] = []
-  constructor(private userService: UserService) {
-    this.getUsers();
-  }
+export class HomeComponent implements OnInit {
+  users: any[] = []; 
+  currentUser: any;
 
-  getUsers() {
-    this.userService.getUsers().subscribe({
-      next: (users) => this.users = users,
-      error: (err) => console.error('Error fetching users', err)
-    })
+  constructor(private auth: AuthService, private router: Router) {}
+
+  ngOnInit(): void {
+    // Check if user is logged in
+    if (!this.auth.isLoggedIn()) {
+      this.router.navigate(['/login']);
+      return;
+    }
+
+    // Get the current logged-in user
+    this.currentUser = this.auth.getCurrentUser();
   }
 }
