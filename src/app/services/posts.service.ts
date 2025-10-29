@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Post } from '../models/post.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostsService {
-  currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
-  currentUserId = this.currentUser.id;
-  private url = "http://localhost:3000/posts"
-  constructor(private http: HttpClient) { }
+  private url = 'http://localhost:3000/posts';
 
-  
-  
+  constructor(private http: HttpClient) {}
+
+  getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.url);
+  }
 }
