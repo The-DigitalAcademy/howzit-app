@@ -155,6 +155,17 @@
       "profileImage": "",
       "following": [],
       "followers": []
+    },
+    {
+      "id": "7f21",
+      "name": "TB",
+      "email": "eatTb@example.com",
+      "password": "Eat123",
+      "username": "eatTb",
+      "bio": "",
+      "profileImage": "",
+      "following": [],
+      "followers": []
     }
   ],
   "posts": [
