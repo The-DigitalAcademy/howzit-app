@@ -12,6 +12,7 @@
         type="text" 
         id="name" 
         formControlName="name"
+        placeholder="Enter your name"
         [class.error]="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
       />
       <span class="error-message" *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
@@ -26,6 +27,7 @@
         type="email" 
         id="email" 
         formControlName="email"
+        placeholder="Enter your email"
         [class.error]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
       />
       <span class="error-message" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
@@ -40,6 +42,7 @@
         type="password" 
         id="password" 
         formControlName="password"
+        placeholder="Enter your password"
         [class.error]="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
       />
       <span class="error-message" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
@@ -54,6 +57,7 @@
         type="password" 
         id="confirm-password" 
         formControlName="confirmPassword"
+        placeholder="Confirm your password"
         [class.error]="(registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched) || passwordMismatch"
       />
       <span class="error-message" *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched">
