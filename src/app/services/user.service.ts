@@ -11,6 +11,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  // get all followers of a user
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.url);
   }
