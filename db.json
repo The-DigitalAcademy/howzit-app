@@ -133,6 +133,17 @@
       "profileImage": "",
       "following": [],
       "followers": []
+    },
+    {
+      "id": "2ab3",
+      "name": "zen",
+      "email": "zen@gmail.com",
+      "password": "1234567",
+      "username": "zen",
+      "bio": "",
+      "profileImage": "",
+      "following": [],
+      "followers": []
     }
   ],
   "posts": [
