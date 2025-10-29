@@ -1,10 +1,10 @@
-/* === CREATE POST CARD === */
+
 .create-post-card {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  padding: 30px; /* Changed from 10px to match profile padding */
+  padding: 30px; 
   box-shadow: 0 0 20px rgba(164, 69, 247, 0.25);
-  width: 100%; /* Changed from max-width to width */
+  width: 100%; 
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.4s ease;
@@ -17,7 +17,7 @@
   box-shadow: 0 0 25px rgba(255, 110, 199, 0.4);
 }
 
-/* === TITLE === */
+
 .create-post-card h2 {
   margin-bottom: 25px;
   font-size: 26px;
@@ -29,18 +29,17 @@
   letter-spacing: 1px;
 }
 
-/* === FORM ELEMENTS === */
 form {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the buttons & textarea */
+  align-items: center; 
   gap: 20px;
   font-weight: 600;
   font-size: 14px;
   color: #fff;
 }
 
-/* === TEXTAREA === */
+
 textarea {
   width: 700px;
   max-width: 800px;
@@ -57,8 +56,8 @@ textarea {
   
 }
 textarea::placeholder {
-  color: #dddcdc; /* Black placeholder text */
-  opacity: 1; /* Ensures full opacity */
+  color: #dddcdc; 
+  opacity: 1; 
   }
 
 textarea:focus {
@@ -68,7 +67,7 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* === BUTTONS === */
+
 .btn {
   background: linear-gradient(90deg, #a445f7, #ff6ec7);
   color: #fff;
@@ -90,7 +89,7 @@ textarea:focus {
   box-shadow: 0 0 12px rgba(255, 110, 199, 0.4);
 }
 
-/* Subtle glowing gradient animation */
+
 .btn::before {
   content: "";
   position: absolute;
@@ -116,13 +115,13 @@ textarea:focus {
   box-shadow: 0 0 20px rgba(255, 110, 199, 0.6);
 }
 
-/* Add a pressed effect when clicked */
+
 .btn:active {
   transform: scale(0.98);
   box-shadow: 0 0 8px rgba(255, 110, 199, 0.4);
 }
 
-/* === FUN ENTRY ANIMATION === */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -134,7 +133,7 @@ textarea:focus {
   }
 }
 
-/* === RESPONSIVE === */
+
 @media (max-width: 768px) {
   .create-post-card {
     margin: 20px;
@@ -148,3 +147,60 @@ textarea:focus {
     justify-content: center;
   }
 }
+
+
+
+container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+}
+
+
+.title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.upload-section {
+  margin-bottom: 0.8rem;
+}
+
+input[type='file'] {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4rem;
+  cursor: pointer;
+  background-color: #fafafa;
+  font-size: 0.85rem;
+}
+
+.preview {
+  text-align: center;
+  margin: 0.8rem 0;
+}
+
+.preview img {
+  width: 150px;           
+  height: 150px;          
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+

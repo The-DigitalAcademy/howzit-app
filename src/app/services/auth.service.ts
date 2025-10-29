@@ -72,4 +72,23 @@ export class AuthService {
     return !!localStorage.getItem('currentUser');
   }
 
+  getCurrentUser(): any { // Use 'User' model type if available
+    const userString = localStorage.getItem('currentUser');
+    if (userString) {
+      try {
+        return JSON.parse(userString);
+      } catch (e) {
+        console.error('Error parsing currentUser from localStorage', e);
+        return null;
+      }
+    }
+    return null;
+  }
+  
+  // You might also need this for the post filtering logic from before:
+  getCurrentUserId(): string | number | null {
+    const user = this.getCurrentUser();
+    return user ? user.id : null;
+  }
+
 }

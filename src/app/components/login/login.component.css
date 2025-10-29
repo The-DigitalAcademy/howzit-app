@@ -1,4 +1,4 @@
-/* === LOGIN PAGE BACKGROUND === */
+
 .container {
   position: relative;
   display: flex;
@@ -7,14 +7,13 @@
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   
- /* === HOWZIT THEME BACKGROUND === */
+
 .create-post-container {
   background: linear-gradient(135deg, #a445f7, #ff6ec7);
 }
 
 }
 
-/* === FLOATING HOWZIT ANIMATION === */
 .container::before,
 .container::after {
   content: "Howzit";
@@ -49,7 +48,7 @@
   }
 }
 
-/* === LOGIN CARD === */
+
 .login {
   position: relative;
   z-index: 2;
@@ -65,7 +64,7 @@
   color: #fff;
 }
 
-/* === LABELS === */
+
 .login label {
   display: block;
   margin-bottom: 0.6rem;
@@ -73,7 +72,7 @@
   color: #fff;
 }
 
-/* === INPUT FIELDS === */
+
 .login input {
   width: 100%;
   padding: 0.9rem;
@@ -93,7 +92,7 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* === BUTTON === */
+
 .login button {
   width: 100%;
   padding: 0.9rem;
@@ -134,7 +133,6 @@
   box-shadow: 0 0 20px rgba(255, 110, 199, 0.6);
 }
 
-/* === TEXT LINKS === */
 .login p {
   text-align: center;
   color: #fff;
@@ -155,7 +153,7 @@
   color: #fff;
 }
 
-/* === ENTRY ANIMATION === */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -167,7 +165,7 @@
   }
 }
 
-/* === RESPONSIVE === */
+
 @media (max-width: 768px) {
   .login {
     margin: 20px;
