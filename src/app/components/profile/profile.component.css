@@ -1,4 +1,4 @@
-/* === GLOBAL RESET === */
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 
-/* === CONTAINER === */
+
 .container {
   max-width: 1000px;
   display: flex;
@@ -23,7 +23,7 @@ body {
   gap: 40px;
 }
 
-/* === NAVBAR === */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -80,7 +80,7 @@ body {
   width: 100%;
 }
 
-/* === PROFILE CARD === */
+
 .profile {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 16px;
@@ -154,7 +154,7 @@ body {
   color: #b0b0b0;
 }
 
-/* === POSTS SECTION === */
+
 .posts-section {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 16px;
@@ -201,7 +201,7 @@ body {
   transform: scale(1.1);
 }
 
-/* === CREATE POST CARD === */
+
 .create-post-card {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 16px;
@@ -227,7 +227,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* === FORM ELEMENTS === */
+
 form {
   display: flex;
   flex-direction: column;
@@ -254,7 +254,7 @@ textarea:focus {
   outline: none;
 }
 
-/* === BUTTON === */
+
 .btn {
   align-self: center;
   background: linear-gradient(90deg, #a445f7, #ff6ec7);
@@ -297,7 +297,7 @@ textarea:focus {
   left: 100%;
 }
 
-/* === ANIMATIONS === */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -321,7 +321,7 @@ textarea:focus {
   }
 }
 
-/* === RESPONSIVE === */
+
 @media (max-width: 768px) {
   .info {
     flex-direction: column;

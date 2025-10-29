@@ -1,4 +1,4 @@
-/* === GLOBAL RESET === */
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* === PAGE TITLE === */
+
 .page-title {
   max-width: 1200px;
   margin: 40px auto 30px auto;
@@ -27,7 +27,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* === PAGE CONTENT === */
+
 .page-content {
   display: flex;
   flex-direction: row;
@@ -37,7 +37,7 @@ body {
   padding: 0 20px;
 }
 
-/* === FEED GRID === */
+
 .feed-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,7 +45,7 @@ body {
   flex: 3;
 }
 
-/* === POST CARD === */
+
 .post {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
@@ -61,7 +61,7 @@ body {
   box-shadow: 0 6px 30px rgba(255, 110, 199, 0.4);
 }
 
-/* === POST HEADER === */
+
 .post-header {
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@ body {
   box-shadow: 0 0 8px rgba(164, 69, 247, 0.5);
 }
 
-/* === POST INFO === */
+
 .post-info {
   display: flex;
   flex-direction: column;
@@ -96,7 +96,7 @@ body {
   color: #c4b5fd;
 }
 
-/* === POST CONTENT === */
+
 .post-content {
   padding: 0;
 }
@@ -116,7 +116,7 @@ body {
   line-height: 1.6;
 }
 
-/* === SUGGESTIONS SIDEBAR === */
+
 .suggestions {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
@@ -130,7 +130,6 @@ body {
   box-shadow: 0 0 20px rgba(164, 69, 247, 0.25);
 }
 
-/* === SUGGESTIONS HEADER === */
 .suggestions h3 {
   font-size: 18px;
   font-weight: 600;
@@ -142,7 +141,6 @@ body {
   padding-bottom: 10px;
 }
 
-/* === SUGGESTION PROFILE === */
 .suggestion-profile {
   display: flex;
   align-items: center;
@@ -176,7 +174,7 @@ body {
   color: #c4b5fd;
 }
 
-/* === FOLLOW BUTTON === */
+
 .follow-btn {
   background: linear-gradient(90deg, #a445f7, #ff6ec7);
   color: #fff;
@@ -194,7 +192,7 @@ body {
   box-shadow: 0 0 10px rgba(255, 110, 199, 0.6);
 }
 
-/* === RESPONSIVE DESIGN === */
+
 @media (max-width: 1024px) {
   .feed-grid {
     grid-template-columns: repeat(2, 1fr);
