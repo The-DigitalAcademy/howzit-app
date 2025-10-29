@@ -11,7 +11,7 @@
         <p class="username">@johndoe</p>
         <div class="stats">
           <div class="stat">
-            <span class="stat-number">24</span>
+            <span class="stat-number">{{ posts.length }}</span>
             <span class="stat-label">Posts</span>
           </div>
           <div class="stat">
@@ -31,52 +31,12 @@
     <h3 class="section-title">My Posts</h3>
 
     <div class="posts-grid">
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 1" />
+      <div *ngFor="let post of posts" class="grid-item">
+        <img [src]="post.image" [alt]="post.caption" />
       </div>
 
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 2" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 3" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 4" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 5" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 6" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 7" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 8" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 9" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 10" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 11" />
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400" alt="Post 12" />
+      <div *ngIf="posts.length === 0" class="no-posts">
+        <p>No posts yet. <a routerLink="/create-post">Create your first post!</a></p>
       </div>
     </div>
   </div>
