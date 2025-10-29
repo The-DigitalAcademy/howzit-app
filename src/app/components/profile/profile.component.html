@@ -1,13 +1,14 @@
 <main class="container">
-  <div class="profile">
+  <div class="profile" *ngIf="isLoggedIn">
     <div class="info">
       <img
-        src="https://via.placeholder.com/150"
+        src="assets/images/profile1.png"
         alt="Profile Picture"
         class="picture"
       />
       <div class="details">
-        <h2 class="name">John Doe</h2>
+        <h2 class="name">John Doe</h2>    <p>Basic Icon: <i class="fa fa-home"></i></p>
+
         <p class="username">@johndoe</p>
         <div class="stats">
           <div class="stat">
