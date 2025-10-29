@@ -1,4 +1,4 @@
-/* === GLOBAL RESET === */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,14 +6,14 @@
 }
 
 
-/* === NAVBAR === */
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* This pushes logo left and links right */
+  justify-content: space-between; 
   padding: 15px 50px;
   background: linear-gradient(90deg, #240046, #3c096c, #5a189a);
   box-shadow: 0 0 15px rgba(164, 69, 247, 0.4);
@@ -21,7 +21,7 @@
   height: 80px;
 }
 
-/* === LOGO === */
+
 .logo {
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@
   padding: 10px;
 }
 
-/* === NAV LINKS (Aligned Right) === */
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -54,7 +54,7 @@
 .nav-links a {
   display: flex;
   align-items: center;
-  gap: 8px; /* Space between icon and text */
+  gap: 8px; 
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
@@ -63,12 +63,12 @@
   position: relative;
 }
 
-/* Icon styling */
+
 .nav-links svg {
   transition: transform 0.3s ease;
 }
 
-/* Hover effect */
+
 .nav-links a:hover {
   color: #ff6ec7;
   text-shadow: 0 0 8px rgba(255, 110, 199, 0.8);
@@ -78,7 +78,7 @@
   transform: translateY(-2px);
 }
 
-/* Optional underline animation */
+
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -94,7 +94,7 @@
   width: 100%;
 }
 
-/* === PROFILE PICTURE ANIMATION === */
+
 .picture {
   width: 100px;
   height: 100px;
@@ -103,7 +103,7 @@
   animation: zoomInOut 4s ease-in-out infinite;
 }
 
-/* === ZOOM ANIMATION === */
+
 @keyframes zoomInOut {
   0% {
     transform: scale(1);
@@ -116,7 +116,7 @@
   }
 }
 
-/* === RESPONSIVE DESIGN === */
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
