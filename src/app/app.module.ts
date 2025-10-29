@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './components/register/register.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

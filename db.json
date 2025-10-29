@@ -135,11 +135,22 @@
       "followers": []
     },
     {
-      "id": "2ab3",
-      "name": "zen",
-      "email": "zen@gmail.com",
-      "password": "1234567",
-      "username": "zen",
+      "id": "a3c1",
+      "name": "Hlokza",
+      "email": "hlogimasipa@gmail.com",
+      "password": "Muscleman@21",
+      "username": "hlogimasipa",
+      "bio": "",
+      "profileImage": "",
+      "following": [],
+      "followers": []
+    },
+    {
+      "id": "b289",
+      "name": "Traffik",
+      "email": "traffikrobhane@gmail.com",
+      "password": "Traf.fik@21",
+      "username": "traffikrobhane",
       "bio": "",
       "profileImage": "",
       "following": [],
