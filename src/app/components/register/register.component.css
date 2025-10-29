@@ -1,65 +1,120 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+
+.register {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(217, 70, 239, 0.4);
+  width: 100%;
+  max-width: 380px;
+  backdrop-filter: blur(15px);
+  text-align: center;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-h3{
-  text-align: center;
-  color: #333;
+
+.register img {
+  width: 120px;
   margin-bottom: 1rem;
 }
 
-.register {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px black;
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff6ec7, #a445f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
 }
 
-.register label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #333;
-  font-weight: bold;
+.register p.tagline {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #d7aefb;
+  margin-bottom: 2rem;
 }
+
 
 .register input {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.8rem;
   margin-bottom: 1rem;
-  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s;
 }
+
+.register input::placeholder {
+  color: #bbb;
+}
+
+.register input:focus {
+  border-color: #d946ef;
+  box-shadow: 0 0 10px #d946ef;
+}
+
 
 .register button {
   width: 100%;
   padding: 0.75rem;
   border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff6ec7, #a445f7);
+  color: #fff;
+  font-weight: 600;
   font-size: 1rem;
-  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.register button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #a445f7;
+}
+
+
 .register p {
-  text-align: center;
   margin-top: 1rem;
-  color: #555;
+  font-size: 0.9rem;
+  color: #ccc;
 }
 
 .register p a {
-  color: #007bff;
+  color: #ff6ec7;
   text-decoration: none;
+  font-weight: 600;
+}
+
+.register p a:hover {
+  text-decoration: underline;
+}
+
+
+.divider {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
 }

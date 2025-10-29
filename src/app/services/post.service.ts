@@ -14,6 +14,11 @@ export class PostsService {
   getPosts(): Observable<any[]> {
     return this.http.get<any[]>(this.postsUrl);
   }
+  getPostsByUserId(userId: string | number): Observable<any[]> {
+    // This utilizes the JSON Server query feature: /posts?userId=X
+    return this.http.get<any[]>(`${this.postsUrl}?userId=${userId}`);
+  }
+    
 
   addPost(newPost: any): Observable<Post> {
     return this.http.post<Post>(this.postsUrl, newPost)

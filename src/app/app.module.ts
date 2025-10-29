@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './components/register/register.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

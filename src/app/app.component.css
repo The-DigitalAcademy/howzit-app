@@ -1,54 +1,134 @@
+/* === GLOBAL RESET === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
+/* === NAVBAR === */
 .navbar {
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 100;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; /* This pushes logo left and links right */
+  padding: 15px 50px;
+  background: linear-gradient(90deg, #240046, #3c096c, #5a189a);
+  box-shadow: 0 0 15px rgba(164, 69, 247, 0.4);
+  border: none;
+  height: 80px;
 }
 
+/* === LOGO === */
 .logo {
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff6ec7, #a445f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
 }
 
+.logo img {
+  height: 60px;
+  width: auto;
+  padding: 10px;
+}
+
+/* === NAV LINKS (Aligned Right) === */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
 }
 
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Icon styling */
+.nav-links svg {
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+  color: #ff6ec7;
+  text-shadow: 0 0 8px rgba(255, 110, 199, 0.8);
+}
+
+.nav-links a:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Optional underline animation */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6ec7, #a445f7);
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* === PROFILE PICTURE ANIMATION === */
 .picture {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-
-  /* Animation settings */
   animation: zoomInOut 4s ease-in-out infinite;
 }
 
-/* Keyframes for zoom in and out effect */
+/* === ZOOM ANIMATION === */
 @keyframes zoomInOut {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.05);
   }
   100% {
     transform: scale(1);
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 10px;
+    width: 100%;
   }
 }

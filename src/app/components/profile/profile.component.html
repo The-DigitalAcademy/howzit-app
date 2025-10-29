@@ -1,25 +1,35 @@
 <main class="container">
-  <div class="profile" *ngIf="isLoggedIn">
+  <!-- Profile Section: Only shows if the user is logged in -->
+  <div class="profile" *ngIf="isLoggedIn && currentUserProfile">
     <div class="info">
+      <!-- Display User's Profile Image -->
       <img
-        src="https://via.placeholder.com/150"
+        [src]="currentUserProfile.profileImage || 'assets/images/default.png'"
         alt="Profile Picture"
         class="picture"
       />
+      
       <div class="details">
-        <h2 class="name">John Doe</h2>
-        <p class="username">@johndoe</p>
+        <!-- Display User's Name and Username -->
+        <h2 class="name">{{ currentUserProfile.name }}</h2>
+        <p class="username">@{{ currentUserProfile.username }}</p>
+
+        <!-- User Bio (Optional field) -->
+        <p class="bio">{{ currentUserProfile.bio }}</p>
+
         <div class="stats">
+          <!-- Stats: Posts count uses dynamic data -->
           <div class="stat">
             <span class="stat-number">{{ posts.length }}</span>
             <span class="stat-label">Posts</span>
           </div>
+          <!-- Followers/Following stats use dynamic data if available, otherwise static placeholders -->
           <div class="stat">
-            <span class="stat-number">1.2k</span>
+            <span class="stat-number">{{ currentUserProfile.followers ? currentUserProfile.followers.length : '1.2k' }}</span>
             <span class="stat-label">Followers</span>
           </div>
           <div class="stat">
-            <span class="stat-number">432</span>
+            <span class="stat-number">{{ currentUserProfile.following ? currentUserProfile.following.length : '432' }}</span>
             <span class="stat-label">Following</span>
           </div>
         </div>
@@ -27,14 +37,17 @@
     </div>
   </div>
 
+  <!-- Posts Section -->
   <div class="posts-section">
     <h3 class="section-title">My Posts</h3>
 
     <div class="posts-grid">
+      <!-- Loop through the filtered posts array -->
       <div *ngFor="let post of posts" class="grid-item">
         <img [src]="post.image" [alt]="post.caption" />
       </div>
 
+      <!-- Message if no posts are found -->
       <div *ngIf="posts.length === 0" class="no-posts">
         <p>No posts yet. <a routerLink="/create-post">Create your first post!</a></p>
       </div>
