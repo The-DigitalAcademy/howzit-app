@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { Post } from 'src/app/models/post.model';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +12,12 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   users: User[] = [];
+  posts: Post[] = [];
+  cuurentUserId = localStorage.getItem('currentUserId') || '';
   constructor(
     private userService: UserService,
     private authService: AuthService,
-    private router: Router
+    private postService: PostsService
   ) {
     this.getUsers();
   }
@@ -25,6 +28,8 @@ export class HomeComponent {
       error: (err) => console.error('Error fetching users', err),
     });
   }
+
+  
 
   get isLoggedIn(): boolean {
     return this.authService.isLoggedIn();

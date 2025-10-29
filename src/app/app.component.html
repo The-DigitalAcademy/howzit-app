@@ -1,11 +1,11 @@
 <nav class="navbar">
   <div class="nav-container">
     <img src="assets/images/LOGO.png" alt="" class="picture">
-    <ul class="nav-links" *ngIf="isLoggedIn">
+    <ul class="nav-links" *ngIf="isLoggedIn()">
       <li><a routerLink="/home" class="active">Home</a></li>
       <li><a routerLink="/profile">Profile</a></li>
       <li><a routerLink="/create-post">Create Post</a></li>
-      <li><a routerLink="/logout">Logout</a></li>
+      <li><a routerLink="/logout" (click)="logout()">Logout</a></li>
     </ul>
   </div>
 </nav>
