@@ -1,8 +1,9 @@
 <div class="container">
   <form [formGroup]="loginForm" class="login">
+   
     <label for="email"
       >Email
-      <input type="email" name="email" id="email" formControlName="email" />
+      <input type="email" name="email" id="email" formControlName="email" placeholder="Enter your email address"/>
     </label>
     <label for="password"
       >Password
@@ -11,6 +12,7 @@
         name="password"
         id="password"
         formControlName="password"
+        placeholder="Enter your password"
       />
     </label>
     <button type="submit">Login</button>
