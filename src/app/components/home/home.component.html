@@ -37,7 +37,16 @@
         <span class="username">{{ user.username }}</span>
         <span class="sub-text">{{ user.email }}</span>
       </div>
-      <button class="follow-btn">Follow</button>
+       <button 
+        class="follow-btn" 
+        (click)="toggleFollow(user.id)"
+        [ngClass]="{ 
+          'followed': isFollowing(user.id),
+          'not-followed': !isFollowing(user.id)
+        }"
+      >
+        {{ isFollowing(user.id) ? 'Unfollow' : 'Follow' }}
+      </button>
     </div>
   </aside>
 </div>

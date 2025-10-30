@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Post } from 'src/app/models/post.model';
 import { PostsService } from 'src/app/services/post.service'; 
 
 @Component({

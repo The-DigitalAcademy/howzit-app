@@ -1,17 +1,14 @@
-
 .container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  
+  font-family: "Poppins", sans-serif;
 
-.create-post-container {
-  background: linear-gradient(135deg, #a445f7, #ff6ec7);
-}
-
+  .create-post-container {
+    background: linear-gradient(135deg, #a445f7, #ff6ec7);
+  }
 }
 
 .container::before,
@@ -48,7 +45,6 @@
   }
 }
 
-
 .login {
   position: relative;
   z-index: 2;
@@ -64,14 +60,12 @@
   color: #fff;
 }
 
-
 .login label {
   display: block;
   margin-bottom: 0.6rem;
   font-weight: 600;
   color: #fff;
 }
-
 
 .login input {
   width: 100%;
@@ -91,7 +85,6 @@
   outline: none;
   background: rgba(255, 255, 255, 0.12);
 }
-
 
 .login button {
   width: 100%;
@@ -153,7 +146,6 @@
   color: #fff;
 }
 
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -164,7 +156,6 @@
     transform: translateY(0);
   }
 }
-
 
 @media (max-width: 768px) {
   .login {
