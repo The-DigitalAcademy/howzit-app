@@ -11,7 +11,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  // Register new user
   register(
     name: string,
     email: string,
@@ -27,9 +26,9 @@ export class AuthService {
           name,
           email,
           password,
-          username: email.split('@')[0], // takes the part before @ as the username
+          username: email.split('@')[0], 
           bio: '',
-          profileImage: '',
+          profileImage: 'assets/profile.jpeg',
           following: [],
           followers: [],
         };
@@ -46,7 +45,6 @@ export class AuthService {
     );
   }
 
-  // Login existing user
   login(email: string, password: string): Observable<boolean> {
     return this.http
       .get<User[]>(`${this.baseUrl}?email=${email}&password=${password}`)
@@ -62,17 +60,15 @@ export class AuthService {
       );
   }
 
-  // Logout the curent user
   logout(): void {
     localStorage.removeItem('currentUser');
   }
 
-  // Check if user is logged in
   isLoggedIn(): boolean {
     return !!localStorage.getItem('currentUser');
   }
 
-  getCurrentUser(): any { // Use 'User' model type if available
+  getCurrentUser(): any { 
     const userString = localStorage.getItem('currentUser');
     if (userString) {
       try {
@@ -85,7 +81,6 @@ export class AuthService {
     return null;
   }
   
-  // You might also need this for the post filtering logic from before:
   getCurrentUserId(): string | number | null {
     const user = this.getCurrentUser();
     return user ? user.id : null;

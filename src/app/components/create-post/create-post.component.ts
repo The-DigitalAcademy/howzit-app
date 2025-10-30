@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Post } from 'src/app/models/post.model';
 import { PostsService } from 'src/app/services/post.service'; 
 
 @Component({
@@ -33,9 +32,12 @@ export class CreatePostComponent {
 
     const newPost = {
       id: Date.now(),
+      userId: JSON.parse(localStorage.getItem('currentUser') || '{}').id,
       caption: this.caption,
-      image: this.imagePreview, 
-      createdAt: new Date().toISOString(),
+      image: this.imagePreview,  
+      likes: 0,
+      timestamp: new Date().toISOString(),
+      comments: []
     };
 
     this.postsService.addPost(newPost).subscribe(() => {

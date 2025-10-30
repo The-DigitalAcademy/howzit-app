@@ -45,9 +45,11 @@ export class ProfileComponent implements OnInit {
 
   
   getUserPosts() {
+    console.log('Current User ID:', this.currentUserId);
     if (this.currentUserId) {
       this.postsService.getPostsByUserId(this.currentUserId).subscribe({
         next: (userPosts) => {
+          console.log('Fetched User Posts:', userPosts);
           this.posts = userPosts; 
         },
         error: (error) => {

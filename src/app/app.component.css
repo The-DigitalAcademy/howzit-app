@@ -1,11 +1,8 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
 
 .navbar {
   position: sticky;
@@ -13,14 +10,13 @@
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 15px 50px;
   background: linear-gradient(90deg, #240046, #3c096c, #5a189a);
   box-shadow: 0 0 15px rgba(164, 69, 247, 0.4);
   border: none;
   height: 80px;
 }
-
 
 .logo {
   display: flex;
@@ -41,7 +37,6 @@
   padding: 10px;
 }
 
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -55,7 +50,7 @@
 .nav-links a {
   display: flex;
   align-items: center;
-  gap: 8px; 
+  gap: 8px;
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
@@ -64,11 +59,9 @@
   position: relative;
 }
 
-
 .nav-links svg {
   transition: transform 0.3s ease;
 }
-
 
 .nav-links a:hover {
   color: #ff6ec7;
@@ -79,9 +72,8 @@
   transform: translateY(-2px);
 }
 
-
 .nav-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0%;
   height: 2px;
@@ -95,7 +87,6 @@
   width: 100%;
 }
 
-
 .picture {
   width: 100px;
   height: 100px;
@@ -103,7 +94,6 @@
   object-fit: cover;
   animation: zoomInOut 4s ease-in-out infinite;
 }
-
 
 @keyframes zoomInOut {
   0% {
@@ -116,7 +106,6 @@
     transform: scale(1);
   }
 }
-
 
 @media (max-width: 768px) {
   .navbar {

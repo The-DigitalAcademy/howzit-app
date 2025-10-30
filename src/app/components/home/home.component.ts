@@ -3,7 +3,7 @@ import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { Post } from 'src/app/models/post.model';
-import { PostsService } from 'src/app/services/posts.service';
+import { PostsService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   posts: Post[] = [];
   filteredPosts: Post[] = [];
   currentUser: User | null = null;
+  followingIds: (string | number)[] = []; 
 
   constructor(
     private userService: UserService,
@@ -28,51 +29,86 @@ export class HomeComponent implements OnInit {
     this.getPosts();
   }
 
-  // Loads current user from local storage
   loadCurrentUser(): void {
     const storedUser = localStorage.getItem('currentUser');
     if (storedUser) {
       this.currentUser = JSON.parse(storedUser);
+      if (this.currentUser && this.currentUser.following) {
+        this.followingIds = this.currentUser.following.map(id => String(id));
+      } else {
+        this.followingIds = [];
+      }
     }
   }
 
-  // get all users
   getUsers(): void {
     this.userService.getUsers().subscribe({
-      next: (users) => (this.users = users),
+      next: (users) => {
+        if (this.currentUser) {
+          const currentUserId = this.currentUser.id;
+
+          this.users = users.filter((user) => user.id !== currentUserId);
+        }else{
+          this.users = users;
+        }
+      },
       error: (err) => console.error('Error fetching users', err),
     });
   }
 
-  // get all posts and filter by following
   getPosts(): void {
   this.postService.getPosts().subscribe({
     next: (posts) => {
       this.posts = posts;
-
-      if (this.currentUser && this.currentUser.following) {
-        // Convert string IDs to numbers for comparison
-        const followingIds = this.currentUser.following.map((id) => Number(id));
-
-        this.filteredPosts = posts.filter((post) =>
-          followingIds.includes(Number(post.userId))
-        );
-      } else {
-        this.filteredPosts = [];
-      }
+      this.filterPostsByFollowing();
     },
     error: (err) => console.error('Error fetching posts', err),
   });
 }
 
-
-  // Find user by ID
-  getUserById(id: number): User | undefined {
-    return this.users.find((user) => Number(user.id) === Number(id));
+  filterPostsByFollowing(): void {
+    if (this.currentUser && this.followingIds.length > 0) {
+        this.filteredPosts = this.posts.filter((post) =>
+          this.followingIds.includes(String(post.userId))
+        );
+    } else {
+        this.filteredPosts = [];
+    }
   }
 
-  // Check if user is logged in
-  get isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
+  isFollowing(targetUserId: string | number): boolean {
+    return this.followingIds.includes(String(targetUserId));
+  }
+
+  toggleFollow(targetUserId: string | number): void {
+    if (!this.currentUser) return; 
+
+    const targetIdString = String(targetUserId);
+    const currentUserId = this.currentUser.id;
+    let newFollowingList = [...this.followingIds];
+
+    if (this.isFollowing(targetIdString)) {
+      newFollowingList = newFollowingList.filter(id => id !== targetIdString);
+    } else {
+      newFollowingList.push(targetIdString);
+    }
+
+    this.userService.updateUserFollowing(currentUserId, newFollowingList).subscribe({
+      next: (updatedUser: User) => {
+        localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+        
+        this.currentUser = updatedUser;
+        this.followingIds = newFollowingList;
+        this.filterPostsByFollowing();
+
+        console.log(`Successfully updated following status for user ${currentUserId}`);
+      },
+      error: (err) => console.error('Error updating following status', err),
+    });
+  }
+
+
+  getUserById(id: string | number): User | undefined {
+    return this.users.find((user) => String(user.id) === String(id));
   }
 }
