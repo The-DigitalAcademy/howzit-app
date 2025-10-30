@@ -28,7 +28,7 @@ export class AuthService {
           password,
           username: email.split('@')[0], 
           bio: '',
-          profileImage: '',
+          profileImage: 'assets/profile.jpeg',
           following: [],
           followers: [],
         };
